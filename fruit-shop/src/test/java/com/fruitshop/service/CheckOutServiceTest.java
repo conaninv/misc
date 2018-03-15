@@ -1,4 +1,5 @@
 package com.fruitshop.service;
+import com.fruitshop.exception.UnexpectedItemException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,6 +24,12 @@ public class CheckOutServiceTest {
         double totalCost = checkOutService.getTotalCost(shoppingCart);
 
         assertThat(totalCost, is(2.05));
+    }
+
+    @Test(expected = UnexpectedItemException.class)
+    public void testGetTotalCostWithUnexpectedItem() {
+        List<String> shoppingCart = Arrays.asList("Apple", "Banana", "Orange");
+        checkOutService.getTotalCost(shoppingCart);
     }
 
 }

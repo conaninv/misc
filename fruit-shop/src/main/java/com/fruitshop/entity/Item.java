@@ -1,5 +1,7 @@
 package com.fruitshop.entity;
 
+import com.fruitshop.exception.UnexpectedItemException;
+
 public enum Item {
 
     APPLE(0.6),
@@ -13,5 +15,13 @@ public enum Item {
 
     public double getPrice() {
         return price;
+    }
+
+    public static Item fromString(String itemStr) {
+        try {
+            return Item.valueOf(itemStr.toUpperCase());
+        } catch (IllegalArgumentException ex) {
+            throw new UnexpectedItemException(itemStr);
+        }
     }
 }
