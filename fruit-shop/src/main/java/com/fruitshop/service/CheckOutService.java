@@ -1,7 +1,6 @@
 package com.fruitshop.service;
 
-import com.fruitshop.entity.Item;
-import com.fruitshop.exception.UnexpectedItemException;
+import com.fruitshop.domain.Item;
 
 import java.util.List;
 

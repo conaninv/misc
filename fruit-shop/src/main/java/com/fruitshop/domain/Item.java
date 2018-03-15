@@ -1,4 +1,4 @@
-package com.fruitshop.entity;
+package com.fruitshop.domain;
 
 import com.fruitshop.exception.UnexpectedItemException;
 
