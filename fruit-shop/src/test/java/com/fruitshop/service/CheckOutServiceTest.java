@@ -58,6 +58,13 @@ public class CheckOutServiceTest {
         double totalCost = checkOutService.getPromotionalTotalCost(shoppingCart);
         // 3x Apples = £1.2, 4x Oranges = £0.75
         assertThat(totalCost, is(1.95));
+
+        numberOfApples = 9;
+        numberOfOranges = 10;
+        shoppingCart = populateShoppingCart(numberOfApples, numberOfOranges);
+        totalCost = checkOutService.getPromotionalTotalCost(shoppingCart);
+        // 9x Apples = £3, 10x Oranges = £1.75
+        assertThat(totalCost, is(4.75));
     }
 
     @Test
